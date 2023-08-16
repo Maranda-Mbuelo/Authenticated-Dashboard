@@ -1,0 +1,23 @@
+<div class="flex items-center bg-white rounded-full shadow-md border border-blue-300">
+  <input
+    class="w-full px-14 py-2 text-gray-700 rounded-full focus:outline-none focus:shadow-outline"
+    type="text"
+    placeholder="Search..."
+    [(ngModel)]="item"
+    (input)="performSearch()"
+  />
+  <button
+    class="flex-shrink-0 p-2 text-gray-500 hover:text-gray-700 focus:outline-none focus:text-gray-700"
+    aria-label="Search"
+  >
+    <svg
+      class="w-4 h-4 fill-current"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 20 20"
+    >
+      <path
+        d="M9 2C4.589 2 1 5.589 1 10s3.589 8 8 8 8-3.589 8-8-3.589-8-8-8zm0 14c-3.309 0-6-2.691-6-6s2.691-6 6-6 6 2.691 6 6-2.691 6-6 6zm7.707-6.293l-3-3a1 1 0 10-1.414 1.414L14.586 9H7a1 1 0 100 2h7.586l-2.293 2.293a1 1 0 101.414 1.414l3-3a1 1 0 000-1.414z"
+      />
+    </svg>
+  </button>
+</div>

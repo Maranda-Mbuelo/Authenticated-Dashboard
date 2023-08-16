@@ -1,0 +1,72 @@
+/* Styles for desktop view */
+.sidebar {
+    width: 250px;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #232f3e;
+    transition: width 0.5s;
+  }
+  
+  .sidebar.open {
+    width: 0; /* Hide sidebar on mobile */
+  }
+  
+  .sidebar-header {
+    padding: 20px;
+    color: white;
+    font-size: 1.5rem;
+  }
+  
+  .menu-button {
+    display: none; /* Hide the button on desktop */
+  }
+  
+  .menu-items {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+  }
+  
+  .menu-items a {
+    display: block;
+    padding: 10px 20px;
+    color: white;
+    text-decoration: none;
+    transition: background-color 0.3s;
+  }
+  
+  .menu-items a:hover {
+    background-color: #374e65;
+  }
+  
+  /* Media query for mobile view */
+  @media (max-width: 768px) {
+    .sidebar {
+      width: 0;
+    }
+  
+    .menu-button {
+      display: block; /* Show the button on mobile */
+      position: fixed;
+      top: 10px;
+      left: 10px;
+      z-index: 9999;
+      background-color: #232f3e;
+      border: none;
+      border-radius: 50%;
+      padding: 8px;
+      color: white;
+      cursor: pointer;
+    }
+  
+    .menu-items {
+      display: none; /* Hide menu items on mobile */
+    }
+  
+    .sidebar.open .menu-items {
+      display: block; /* Show menu items when sidebar is open on mobile */
+    }
+  }
+  

@@ -1,0 +1,48 @@
+/* ... Existing styles ... */
+
+/* Apply styles to the last hovered item */
+.navigation ul li a:hover .title,
+.navigation ul li a:hover.hovered .title {
+  color: var(--blue);
+}
+
+
+
+
+
+
+.separation-line td {
+    border-top: 1px solid #e2e8f0;
+    padding: 0;
+  }
+
+
+  div.overflow-y-auto::-webkit-scrollbar {
+    width: 6px; /* Width of the scrollbar */
+  }
+  
+  div.overflow-y-auto::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 3px;
+  }
+  
+  div.overflow-y-auto::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+  
+  /* This will target the scrollbar on hover */
+  div.overflow-y-auto:hover::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+  
+
+.search-match {
+  background-color: #f0e68c; /* Highlight color */
+  color: #333; /* Text color for highlighted rows */
+}
+
+.highlighted-row {
+  background-color: yellow;
+}
+
+  
