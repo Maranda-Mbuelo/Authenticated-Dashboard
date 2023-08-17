@@ -4,8 +4,8 @@
         'text-red-500': type === 'error',
         'text-green-500': type === 'success'
       }" class="text-xl mr-4">
-        <!-- <ion-icon *ngIf="type === 'error'" name="alert-circle-outline"></ion-icon>
-        <ion-icon *ngIf="type === 'success'" name="checkmark-circle-outline"></ion-icon> -->
+        <ion-icon *ngIf="type === 'error'" name="alert-circle-outline"></ion-icon>
+        <ion-icon *ngIf="type === 'success'" name="checkmark-circle-outline"></ion-icon>
       </div>
       <div>
         <p [ngClass]="{
@@ -15,7 +15,7 @@
         <p class="text-gray-700">{{ message }}</p>
       </div>
       <button class="ml-auto" (click)="closePopup()">
-        <!-- <ion-icon name="close-circle-outline"></ion-icon> -->
+        <ion-icon name="close-circle-outline"></ion-icon>
       </button>
     </div>
   </div>

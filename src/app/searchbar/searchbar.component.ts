@@ -11,10 +11,6 @@ export class SearchbarComponent {
 
   constructor(private searchService: SearchService) {}
 
-  checkItem() {
-    return this.item;
-  }
-
   performSearch() {
     this.searchService.setSearchTerm(this.item);
   }

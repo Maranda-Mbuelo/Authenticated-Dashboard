@@ -1,11 +1,11 @@
-<div class="flex flex-col lg:flex-row">
+<div class="flex flex-col lg:flex-row h-screen">
   <!-- Left Side Navigation -->
-  <div class="lg:w-64 bg-blue-800 border-l-4 border-blue-800 transition-transform duration-500 transform">
+  <div class="lg:w-64 pr-2 bg-blue-800 transition-transform duration-500 transform">
     <app-sidebar></app-sidebar>
   </div>
 
   <!-- Right Side Content -->
-  <div class="lg:flex-grow bg-gray-100 p-4">
+  <div class="lg:flex-grow bg-gray-100 p-2">
     <app-topbar [username]="currentUser"></app-topbar>
 
     <!-- Blocks Section -->
@@ -25,40 +25,41 @@
     </div>
 
     <!-- Table Section -->
-    <div class="mt-6 rounded-md overflow-hidden bg-white shadow">
-      <table class="w-full">
-        <!-- Table header -->
-        <thead class="bg-gray-100 sticky top-0">
-          <tr>
-            <th class="py-2 px-4 text-indigo-700">Name</th>
-            <th class="py-2 px-4 text-indigo-700">Price</th>
-            <th class="py-2 px-4 text-indigo-700">Payment</th>
-            <th class="py-2 px-4 text-indigo-700">Status</th>
-          </tr>
-        </thead>
-        <!-- Table body -->
-        <tbody>
-          <ng-container *ngFor="let product of products; let i = index">
-            <tr class="hover:bg-indigo-100 hover:text-indigo-600 p-3 rounded-lg cursor-pointer"
+    <div class="mt-6 rounded-md bg-white shadow max-h-105 overflow-y-auto">
+      <h2 class="text-2xl font-semibold px-4 py-2 text-indigo-400 bg-gray-100">Recent Transactions</h2>
+      <div class="table-container">
+        <table class="w-full">
+          <!-- Table header -->
+          <thead class="bg-gray-300 sticky top-0">
+            <tr>
+              <th class="py-2 px-4 text-indigo-700">Name</th>
+              <th class="py-2 px-4 text-indigo-700">Price</th>
+              <th class="py-2 px-4 text-indigo-700">Payment</th>
+              <th class="py-2 px-4 text-indigo-700">Status</th>
+            </tr>
+          </thead>
+          <!-- Table body -->
+          <tbody>
+            <ng-container *ngFor="let product of filteredProducts; let i = index">
+              <tr class="hover:bg-indigo-100 hover:text-indigo-600 p-3 rounded-lg cursor-pointer"
                 [ngClass]="{'highlighted': product.highlighted}">
-              <td class="py-2 px-2" [ngClass]="{'highlighted-text': product.highlighted}">{{ product.name }}</td>
-              <td class="py-2 px-4" [ngClass]="{'highlighted-text': product.highlighted}">{{ product.price | currency: 'R' }}</td>
-              <td class="py-2 px-4" [ngClass]="{'highlighted-text': product.highlighted}">{{ product.payment }}</td>
-              <td class="py-2 px-4"
-                  [ngClass]="{
-                    'highlighted-text': product.highlighted,
-                    'bg-green-200 text-green-600': product.status === 'Approved',
-                    'bg-red-200 text-red-600': product.status === 'Declined'
-                  }">
-                {{ product.status }}
-              </td>
-            </tr>
-            <tr class="separation-line">
-              <td colspan="4"></td>
-            </tr>
-          </ng-container>
-        </tbody>
-      </table>
+                <td class="py-2 px-2" [ngClass]="{'highlighted-text': product.highlighted}">{{ product.name }}</td>
+                <td class="py-2 px-4" [ngClass]="{'highlighted-text': product.highlighted}">{{ product.price | currency:
+                  'R' }}</td>
+                <td class="py-2 px-4" [ngClass]="{'highlighted-text': product.highlighted}">{{ product.payment }}</td>
+                <td class="py-2 px-4" [ngClass]="{
+                      'highlighted-text': product.highlighted,
+                      'bg-green-200 text-green-600': product.status === 'Approved',
+                      'bg-red-200 text-red-600': product.status === 'Declined'
+                    }">
+                  {{ product.status }}
+                </td>
+              </tr>
+            </ng-container>
+          </tbody>
+        </table>
+      </div>
     </div>
+
   </div>
 </div>

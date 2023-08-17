@@ -1,48 +1,109 @@
-/* ... Existing styles ... */
-
-/* Apply styles to the last hovered item */
-.navigation ul li a:hover .title,
-.navigation ul li a:hover.hovered .title {
-  color: var(--blue);
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 250px;
+  background-color: #333;
+  color: #fff;
+  overflow-y: auto;
+  transition: transform 0.3s;
+  z-index: 1000;
 }
 
-
-
-
-
-
-.separation-line td {
-    border-top: 1px solid #e2e8f0;
-    padding: 0;
-  }
-
-
-  div.overflow-y-auto::-webkit-scrollbar {
-    width: 6px; /* Width of the scrollbar */
-  }
-  
-  div.overflow-y-auto::-webkit-scrollbar-thumb {
-    background-color: rgba(0, 0, 0, 0.2);
-    border-radius: 3px;
-  }
-  
-  div.overflow-y-auto::-webkit-scrollbar-track {
-    background-color: transparent;
-  }
-  
-  /* This will target the scrollbar on hover */
-  div.overflow-y-auto:hover::-webkit-scrollbar-thumb {
-    background-color: rgba(0, 0, 0, 0.4);
-  }
-  
-
-.search-match {
-  background-color: #f0e68c; /* Highlight color */
-  color: #333; /* Text color for highlighted rows */
+.sidebar.open {
+  transform: translateX(0);
 }
 
-.highlighted-row {
-  background-color: yellow;
+.sidebar-header {
+  padding: 20px;
+  text-align: center;
+  background-color: #444;
 }
 
+.menu-button {
+  display: none;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 1;
+  color: #fff;
+  font-size: 24px;
+}
+
+.menu-items {
+  padding: 0;
+  list-style: none;
+}
+
+.menu-items li {
+  padding: 15px;
+  border-bottom: 1px solid #555;
+}
+
+.menu-items a {
+  color: #fff;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+
+.menu-items a ion-icon {
+  margin-right: 10px;
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    transform: translateX(-250px);
+  }
   
+  .sidebar.open {
+    transform: translateX(0);
+  }
+
+  .menu-button {
+    display: block;
+  }
+  
+  .menu-items {
+    position: absolute;
+    top: 0;
+    left: -250px;
+    width: 250px;
+    height: 100%;
+    background-color: #333;
+    transition: left 0.3s;
+  }
+
+  .menu-items.open {
+    left: 0;
+  }
+}
+
+/* Ensure the separation line is not visible */
+.separation-line {
+  display: none;
+}
+
+/* Add this CSS to your global styles or component's styles */
+/* This will target only the scrollbar inside the table body */
+div.overflow-y-auto::-webkit-scrollbar {
+  width: 6px; /* Width of the scrollbar */
+}
+
+div.overflow-y-auto::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.2); /* Color of the thumb */
+  border-radius: 3px; /* Rounded corners of the thumb */
+}
+
+div.overflow-y-auto::-webkit-scrollbar-track {
+  background-color: transparent; /* Background color of the track */
+}
+
+/* This will target the scrollbar on hover */
+div.overflow-y-auto:hover::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.4);
+}

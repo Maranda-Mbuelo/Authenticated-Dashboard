@@ -10,6 +10,8 @@ import { SearchbarComponent } from './searchbar/searchbar.component';
 import { HomeComponent } from './home/home.component';
 import { SidebarComponent } from './sidebar/sidebar.component'; 
 import { AuthModule } from './auth/auth.module';
+import { PasswordComponent } from './user/password/password.component';
+import { ProfileComponent } from './user/profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +20,8 @@ import { AuthModule } from './auth/auth.module';
     SearchbarComponent,
     HomeComponent,
     SidebarComponent,
+    PasswordComponent,
+    ProfileComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { getAuth, signInWithEmailAndPassword, signOut, createUserWithEmailAndPassword, onAuthStateChanged, User  } from "firebase/auth";
+import { getAuth, signInWithEmailAndPassword, signOut, createUserWithEmailAndPassword, onAuthStateChanged, User } from "firebase/auth";
 import { LoginForm, SignUpForm } from '../types/auth';
 import { Router } from '@angular/router';
 import { BehaviorSubject, Observable, Subject } from 'rxjs';
@@ -46,7 +46,7 @@ export class AuthService {
         this.loadingSubject.next(false); // Loading complete
       });
   }
-  
+
 
   signUp(form: SignUpForm) {
     this.loadingSubject.next(true); // Start loading
@@ -74,15 +74,15 @@ export class AuthService {
         this.loadingSubject.next(false); // Loading complete
       });
   }
-  
 
-  logOut(){
+
+  logOut() {
     const auth = getAuth();
     signOut(auth).then(() => {
       this.router.navigate(['/login']);
       this.isAuthenticated = false;
     }).catch((error) => {
-        console.log(error);
+      console.log(error);
     });
   }
 

@@ -1,16 +1,14 @@
-<div class="sidebar" [class.open]="sidebarOpen">
-  <div class="sidebar-header">
-    <h1>Mbuelo</h1>
+<div class="container">
+  <div class="navigation">
+    <ul>
+      <li *ngFor="let item of menuItems">
+        <a [href]="item.link">
+          <span class="icon">
+            <ion-icon [name]="item.icon"></ion-icon>
+          </span>
+          <span class="title">{{ item.title }}</span>
+        </a>
+      </li>
+    </ul>
   </div>
-  <button class="menu-button" (click)="toggleSidebar()">
-    <ion-icon name="menu-outline"></ion-icon>
-  </button>
-  <ul class="menu-items">
-    <li *ngFor="let item of menuItems">
-      <a [href]="item.link">
-        <ion-icon [name]="item.icon"></ion-icon>
-        <span>{{ item.title }}</span>
-      </a>
-    </li>
-  </ul>
 </div>

@@ -12,7 +12,7 @@ export class SidebarComponent {
   sidebarOpen: boolean = false;
 
   menuItems = [
-    { icon: 'logo-buffer', title: 'UI_DashBoard', link: '#', class: 'font-semibold ml-2' },
+    { icon: 'logo-buffer', title: 'DashBoard_UI', link: '#', class: 'font-semibold ml-2' },
     { icon: 'home-outline', title: 'Home', link: 'home' },
     { icon: 'people-outline', title: 'Customers', link: '#' },
     { icon: 'settings-outline', title: 'Settings', link: '#' },
